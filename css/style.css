@@ -61,7 +61,7 @@ body {
     line-height: 1.5;
     color: #6f7380;
     text-align: left;
-    background-color: #1d252b;
+    background-color: #3c4d59;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -152,9 +152,9 @@ sup {
 }
 
 a {
-  color: #1f2533;
-  text-decoration: none;
-  background-color: transparent;
+    color: #6a7691;
+    text-decoration: none;
+    background-color: transparent;
 }
 
 a:hover {
@@ -361,10 +361,10 @@ template {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  line-height: 1.2;
-  color: #343a40;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #65717d;
 }
 
 h1, .h1 {
@@ -5156,15 +5156,15 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .progress-bar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  background-color: #0BCEAF;
-  transition: width 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #034f43;
+    transition: width 0.6s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6443,6 +6443,11 @@ button.bg-dark:focus {
 .bg-transparent {
   background-color: transparent !important;
 }
+
+.bg-skillbar {
+    background-color: #04574a !important;
+}
+
 
 .border {
   border: 1px solid #dee2e6 !important;
