@@ -61,7 +61,7 @@ body {
     line-height: 1.5;
     color: #6f7380;
     text-align: left;
-    background-color: #3c4d59;
+    background-color: #141f27;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -152,14 +152,14 @@ sup {
 }
 
 a {
-    color: #6a7691;
+    color: #6f7380;
     text-decoration: none;
     background-color: transparent;
 }
 
 a:hover {
-  color: #078571;
-  text-decoration: underline;
+    color: #0bceaf;
+    text-decoration: underline;
 }
 
 a:not([href]):not([class]) {
@@ -364,7 +364,7 @@ h1, h2, h3, h4, h5, h6,
     margin-bottom: 0.5rem;
     font-weight: 500;
     line-height: 1.2;
-    color: #65717d;
+    color: #74b7ad;
 }
 
 h1, .h1 {
@@ -373,7 +373,7 @@ h1, .h1 {
 
 @media (max-width: 1200px) {
   h1, .h1 {
-    font-size: calc(1.375rem + 1.5vw) ;
+    font-size: calc(1.375rem + 1.5vw);
   }
 }
 
@@ -428,7 +428,7 @@ h6, .h6 {
 
 @media (max-width: 1200px) {
   .display-1 {
-    font-size: calc(2.125rem + 10.5vw) ;
+    font-size: calc(2.125rem + 6.5vw);
   }
 }
 
@@ -6445,7 +6445,11 @@ button.bg-dark:focus {
 }
 
 .bg-skillbar {
-    background-color: #04574a !important;
+    background-color: #6c757d !important;
+}
+
+.bg-readPaper {
+    background-color: #04574a00 !important;
 }
 
 
@@ -9601,6 +9605,14 @@ a.text-dark:hover, a.text-dark:focus {
 
 .text-muted {
   color: #6c757d !important;
+}
+
+.text-readPaper {
+    color: #0bceaf !important;
+}
+
+a.text-readPaper:hover, a.text-readPaper:focus {
+    text-decoration: underline !important;
 }
 
 .text-black-50 {
