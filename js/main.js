@@ -28,34 +28,32 @@
     });
 
 
-    // Typed Initiate
-    if ($('.typed-text-output').length == 1) {
-        var typed_strings = $('.typed-text').text();
-        var typed = new Typed('.typed-text-output', {
-            strings: typed_strings.split(', '),
-            typeSpeed: 80,
-            backSpeed: 20,
-            smartBackspace: false,
-            loop: true
-        });
-    }
+    // Work experience in completed half-year increments since June 2020
+    var experienceStart = new Date(2020, 5, 1);
+    var today = new Date();
+    var completedMonths = (today.getFullYear() - experienceStart.getFullYear()) * 12
+        + today.getMonth() - experienceStart.getMonth();
+    var experienceYears = Math.floor(completedMonths / 6) / 2;
+    $('#acoustics-experience').text(experienceYears + (experienceYears === 1 ? ' year' : ' years'));
 
 
-    // Modal Video
-    $(document).ready(function () {
-        var $videoSrc;
-        $('.btn-play').click(function () {
-            $videoSrc = $(this).data("src");
-        });
-        console.log($videoSrc);
+    // Publication filter
+    $('.publication-filter').on('click', function () {
+        var filter = $(this).data('filter');
 
-        $('#videoModal').on('shown.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-        })
+        $('.publication-filter')
+            .removeClass('active btn-primary')
+            .addClass('btn-outline-primary');
+        $(this)
+            .removeClass('btn-outline-primary')
+            .addClass('active btn-primary');
 
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
-        })
+        if (filter === 'first-author') {
+            $('.publication-item').hide();
+            $('.publication-item[data-first-author="true"]').fadeIn('fast');
+        } else {
+            $('.publication-item').fadeIn('fast');
+        }
     });
 
 
@@ -69,14 +67,6 @@
     });
 
 
-    // Skills
-    $('.skill').waypoint(function () {
-        $('.progress .progress-bar').each(function () {
-            $(this).css("width", $(this).attr("aria-valuenow") + '%');
-        });
-    }, {offset: '80%'});
-    
-    
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
@@ -91,14 +81,5 @@
     });
 
 
-    // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        dots: true,
-        loop: true,
-        items: 1
-    });
-    
 })(jQuery);
 
