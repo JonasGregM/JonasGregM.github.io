@@ -1,3 +1,30 @@
+// Publication filter: native JavaScript for reliable cross-browser behavior
+(function () {
+    "use strict";
+
+    var filterButtons = document.querySelectorAll('.publication-filter');
+    var publicationItems = document.querySelectorAll('.publication-item');
+
+    for (var i = 0; i < filterButtons.length; i++) {
+        filterButtons[i].addEventListener('click', function () {
+            var showFirstAuthorOnly = this.getAttribute('data-filter') === 'first-author';
+
+            for (var buttonIndex = 0; buttonIndex < filterButtons.length; buttonIndex++) {
+                filterButtons[buttonIndex].classList.remove('active', 'btn-primary');
+                filterButtons[buttonIndex].classList.add('btn-outline-primary');
+            }
+
+            this.classList.remove('btn-outline-primary');
+            this.classList.add('active', 'btn-primary');
+
+            for (var itemIndex = 0; itemIndex < publicationItems.length; itemIndex++) {
+                publicationItems[itemIndex].hidden = showFirstAuthorOnly
+                    && publicationItems[itemIndex].getAttribute('data-first-author') !== 'true';
+            }
+        });
+    }
+}());
+
 (function ($) {
     "use strict";
 
@@ -35,26 +62,6 @@
         + today.getMonth() - experienceStart.getMonth();
     var experienceYears = Math.floor(completedMonths / 6) / 2;
     $('#acoustics-experience').text(experienceYears + (experienceYears === 1 ? ' year' : ' years'));
-
-
-    // Publication filter
-    $('.publication-filter').on('click', function () {
-        var filter = $(this).data('filter');
-
-        $('.publication-filter')
-            .removeClass('active btn-primary')
-            .addClass('btn-outline-primary');
-        $(this)
-            .removeClass('btn-outline-primary')
-            .addClass('active btn-primary');
-
-        if (filter === 'first-author') {
-            $('.publication-item').hide();
-            $('.publication-item[data-first-author="true"]').fadeIn('fast');
-        } else {
-            $('.publication-item').fadeIn('fast');
-        }
-    });
 
 
     // Scroll to Bottom
