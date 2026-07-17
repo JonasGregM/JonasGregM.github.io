@@ -10049,7 +10049,7 @@ h6,
 .section-heading-background {
   -webkit-text-stroke: 1px #dee2e6;
   paint-order: stroke fill;
-  transform: scale(0.8);
+  transform: scale(0.48);
 }
 
 @media (max-width: 767.98px) {
@@ -10063,15 +10063,7 @@ h6,
   }
 
   .section-heading-background {
-    transform: scale(0.72);
-  }
-
-  .section-heading-title {
-    width: 100%;
-    padding: 0 1rem;
-    font-size: 1.5rem;
-    line-height: 1.2;
-    text-align: center;
+    transform: scale(0.48);
   }
 
   .publication-group-title {
